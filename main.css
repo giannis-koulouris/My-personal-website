@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+:root{
+    --azure-bg:#77D9E4;
+    --grey-bg:#6F757B;
+    --dark-grey:rgba(65, 74, 82, 1);
+    --navbar-color:rgba(65, 74, 82, .1);
+    --text-color:#CACBCC;
+    font-family: 'Ubuntu', sans-serif;
+}
+body, input, button, select, option, textarea {
+    font-family: 'Ubuntu', sans-serif;
+}
+h1,h2{
+    font-size:4em;
+}
+h3{
+    font-size:2em;
+    font-weight: 400;
+}
+/*** Button CSS ***/
+.btn{
+    margin-top:3rem;
+    padding:1em;
+    display:inline-block;
+    text-decoration:none;
+    color:var(--azure-bg);
+    background:var(--dark-grey);
+}
+.btn:hover{
+    opacity:.9;
+}
+
+/*** Header/Navbar CSS ***/
+
+.header{
+    display:table;
+    background: url(images/intro-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width:100%;
+    height:100vh;
+    color:var(--text-color);
+}
+.navbar{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding:1.5rem 0;
+    background: var(--navbar-color);
+    transition:all .3s linear;
+    z-index: 1;
+}
+.navbar ul{
+    display:flex;
+    list-style: none;
+    justify-content: flex-end;
+    padding-right:5rem;
+}
+.navbar ul li{
+    padding:1rem;
+}
+li.active a{
+    color:var(--azure-bg);
+}
+.navbar a{
+    text-decoration:none;
+    color:var(--text-color);
+}
+.navbar a:hover{
+    color:var(--azure-bg);
+}
+
+.fixed-navbar{   /* Activates on scroll */
+    --navbar-color:rgba(65, 74, 82, 1);
+    background: var(--navbar-color);
+    padding:0;
+    transition:all .3s linear;
+}
+
+.heading {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100vh;
+    align-items: center;
+}
+/* .logo{
+    display:flex;
+} */
+
+
+/****************************/
+
+
+
+.about{
+    height:70vh;
+    background: #77D9E4;
+    text-align: center;
+    color:var(--dark-grey);
+    padding:4rem;
+}
+.about h3::after{
+    content:"";
+    display:block;
+    position: absolute;
+    width:100px;
+    height:2px;
+    background: var(--grey-bg);
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1rem;
+}
+.about h3{
+    margin-bottom:2rem;
+}
+
+
+/****************************/
+
+.portfolio{
+    background:var(--grey-bg);
+    text-align: center;
+    color:var(--azure-bg);
+    padding:4rem;
+    height:auto;
+}
+.portfolio h3::after{
+    content:"";
+    display:block;
+    position: absolute;
+    width:100px;
+    height:2px;
+    background: #222;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1rem;
+}
+.flex-items{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:2rem;
+}
+.flex-items div{
+    width:140px;
+    margin:2rem 1rem 0 1rem;
+    transition:all .2s linear;
+}
+.flex-items div:hover{
+    transform:scale(1.1,1.1);
+}
+.portfolio svg{
+    width:100%;
+    height:100%;
+}
+.portfolio a, .portfolio svg {
+    display: block;
+}
+
+.social{
+    border-radius:50%;
+}
+
+
+.facebook__icon:hover {
+    color: #3B579D;
+    background: #3B579D;
+    }
+.codepen__icon{
+    fill:var(--grey-bg);
+    background: black;
+    border-radius: 20%;
+}
+.codepen__icon:hover{
+    fill:white;
+}
+.github__icon:hover {
+    background: white;
+}
+.linkedin__icon:hover {
+    background:#007BB6;
+}
+
+
+.contact{
+    height:600px;
+    background:var(--azure-bg);
+    text-align: center;
+    color:var(--dark-grey);
+    padding:4rem;
+}
+.contact h3::after{
+        content:"";
+        display:block;
+        position: absolute;
+        width:100px;
+        height:2px;
+        background: var(--grey-bg);
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:1rem;
+}
+
+footer{
+    height:70px;
+    background: #222;
+    /* text-align: center; */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color: var(--grey-bg);
+}
+
+
+/**** Burger Menu CSS ****/
+
+.menu-toggle{
+    top:.5rem;
+    right:24px;
+    cursor: pointer;
+    padding:5px 10px;
+    border:1px solid grey;
+    display:none;
+    background:var(--grey-bg);
+}
+
+
+
+
+/***** Form CSS ******/
+.form{
+    width:60%;
+    margin:100px auto;
+    margin-bottom:0;
+    /* overflow: hidden; */
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas:
+    "text text text email email email"
+    "textarea textarea textarea textarea textarea textarea"
+    ". . button button . .";
+    grid-gap:1rem;
+}
+
+input[type=text],input[type=email]{
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: rgba(255,255,255,0.8);
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    width:100%;
+}
+input[type=text]{
+    grid-area:text;
+}
+input[type=email]{
+    grid-area:email;
+}
+textarea{
+    grid-area:textarea;
+    box-sizing:border-box;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: rgba(255,255,255,0.8);
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    width:100%;
+}
+.form-submit{
+    border:none;
+    grid-area:button;
+    font-size: 16px;
+    cursor: pointer;
+    margin:0;
+ }
+
+
+
+
+/***** MEDIA QUERIES ****/
+
+
+@media screen and (max-width:800px){
+    .form{
+        width:80%;
+        grid-template-areas:
+    "text text text text text text "
+    "email email email email email email "
+    "textarea textarea textarea textarea textarea textarea"
+    ". button button button button .";
+    }
+    .menu-toggle{
+        position: fixed;
+        display:block; /* Show the hamburger menu */
+    }
+    .about{
+        height:auto;
+    }
+    .navbar ul{
+        /* display:block; */
+        flex-direction: column; /* Flex items from top to bottom */
+        text-align: left;
+        margin:2rem;
+        border-top:1px solid white; 
+        margin-bottom:10px;
+    }
+    .navbar ul li{
+        padding:.5rem;
+    }
+    .navbar{
+        max-height:0;
+        overflow: hidden;
+        transition:all .6s linear;
+        padding:0;
+    }
+    .show{
+        max-height:100%;
+
+    }
+
+}
+
+@media screen and (max-width:470px){
+    h1,h2{
+        font-size:3em;
+    }
+    .form{
+        width:100%;
+    }
+}
