@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var scrollLink = $('.scroll');
-    //navbad toggle
+    //navbad toggle for mobile
     $(".menu-toggle").click(function(){
         $('.navbar').toggleClass('show');
     });
@@ -35,5 +35,21 @@ $(document).ready(function(){
             $(".navbar").removeClass("fixed-navbar");
         }
     });
+
+    //scroll to top button
+    $(window).scroll(function(){
+        if($(this).scrollTop()>=60){
+            $(".scroll-top").css("opacity","1");
+        }else{
+            $(".scroll-top").css("opacity","0");
+        }
+    });
+
+    $(".scroll-top").click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
 
 });

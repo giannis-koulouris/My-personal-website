@@ -82,7 +82,7 @@ li.active a{
     --navbar-color:rgba(65, 74, 82, 1);
     background: var(--navbar-color);
     padding:0;
-    transition:all .3s linear;
+    /* transition:all .3s linear; */
 }
 
 .heading {
@@ -242,6 +242,21 @@ footer{
 }
 
 
+/***** Scroll to Top Button CSS ***/
+.scroll-top{
+    opacity: 0;
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    border-radius:50%; 
+    /* background:var(--grey-bg); */
+    color:#CACBCC;
+    cursor: pointer;
+    transition: opacity .3s linear;
+}
+.scroll-top:hover{
+    color:#5e6063;
+}
 
 
 /***** Form CSS ******/
@@ -334,7 +349,7 @@ textarea{
     .navbar{
         max-height:0;
         overflow: hidden;
-        transition:all .6s linear;
+        transition:all .5s linear;
         padding:0;
     }
     .show{
@@ -352,3 +367,9 @@ textarea{
         width:100%;
     }
 }
+
+
+
+/* BACK TO TOP ARROW FIXED KATW DE3IA
+NA SYNDESW TIN FORMA ME TO EMAIL MOU
+PAGE TITLE */
