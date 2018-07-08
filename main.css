@@ -419,7 +419,7 @@ textarea{
     }
     footer{
         justify-content: flex-start;
-        padding-left:2rem;
+        padding-left:1.5rem;
     }
 
 }
