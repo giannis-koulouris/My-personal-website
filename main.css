@@ -9,7 +9,7 @@
     --azure-bg:#77D9E4;
     --grey-bg:#6F757B;
     --dark-grey:rgba(65, 74, 82, 1);
-    --navbar-color:rgba(65, 74, 82, .1);
+    --navbar-bg:rgba(65, 74, 82, .1);
     --text-color:#CACBCC;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -22,18 +22,20 @@ h1,h2{
 h3{
     font-size:2em;
     font-weight: 400;
+    margin-bottom:2rem;
 }
-/*** Button CSS ***/
-.btn{
-    margin-top:3rem;
-    padding:1em;
-    display:inline-block;
-    text-decoration:none;
-    color:var(--azure-bg);
-    background:var(--dark-grey);
-}
-.btn:hover{
-    opacity:.9;
+h3::after{ /* All H3's have a black line underneath them */
+        content:"";
+        display:block;
+        position: absolute;
+        width:100px;
+        height:2px;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:1rem;
+        background:#222;
 }
 
 /*** Header/Navbar CSS ***/
@@ -54,8 +56,8 @@ h3{
     top:0;
     width:100%;
     padding:1.5rem 0;
-    background: var(--navbar-color);
-    transition:all .3s linear;
+    background: var(--navbar-bg);
+    transition:all .5s linear;
     z-index: 1;
 }
 .navbar ul{
@@ -79,8 +81,8 @@ li.active a{
 }
 
 .fixed-navbar{   /* Activates on scroll */
-    --navbar-color:rgba(65, 74, 82, 1);
-    background: var(--navbar-color);
+   --navbar-bg:rgba(65, 74, 82, 1);
+    background: var(--navbar-bg);
     padding:0;
     /* transition:all .3s linear; */
 }
@@ -92,14 +94,18 @@ li.active a{
     height:100vh;
     align-items: center;
 }
-/* .logo{
-    display:flex;
-} */
+
+.heading .btn__learn-more{
+    color:var(--dark-grey);
+    background:var(--azure-bg);
+}
+.heading .btn__learn-more:hover{
+    color:var(--azure-bg);
+    background:var(--dark-grey);
+}
 
 
-/****************************/
-
-
+/***** About CSS *****/
 
 .about{
     height:70vh;
@@ -108,25 +114,8 @@ li.active a{
     color:var(--dark-grey);
     padding:4rem;
 }
-.about h3::after{
-    content:"";
-    display:block;
-    position: absolute;
-    width:100px;
-    height:2px;
-    background: var(--grey-bg);
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:1rem;
-}
-.about h3{
-    margin-bottom:2rem;
-}
 
-
-/****************************/
+/*** Portfolio CSS ******/
 
 .portfolio{
     background:var(--grey-bg);
@@ -135,67 +124,59 @@ li.active a{
     padding:4rem;
     height:auto;
 }
-.portfolio h3::after{
-    content:"";
-    display:block;
-    position: absolute;
-    width:100px;
-    height:2px;
-    background: #222;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:1rem;
-}
-.flex-items{
-    width:100%;
+
+/**** Projects CSS *****/
+
+.projects-wrapper{
     display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items:center;
-    margin-bottom:2rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-.flex-items div{
-    width:140px;
-    margin:2rem 1rem 0 1rem;
+.project{
+    width:350px;
+    height:auto;
+    cursor: pointer;
+    position: relative;
     transition:all .2s linear;
+    margin:.5rem;
 }
-.flex-items div:hover{
+.project:hover{
     transform:scale(1.1,1.1);
 }
-.portfolio svg{
+.project img{
     width:100%;
     height:100%;
 }
-.portfolio a, .portfolio svg {
-    display: block;
+.img-overlay{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    background:rgba(65, 74, 82, 0);
+    position: absolute;
+    top:0;
+    left:0;
+}
+.img-overlay:hover{
+    background:rgba(65, 74, 82, .5);
+}
+.img-overlay a{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity:0;
+    padding:1rem 2rem;
+    background:var(--azure-bg);
+    border-radius:30px;
+    transition:all .3s linear;
+    text-decoration:none;
+    color:white;
+}
+.img-overlay:hover a{
+    opacity:1;
 }
 
-.social{
-    border-radius:50%;
-}
-
-
-.facebook__icon:hover {
-    color: #3B579D;
-    background: #3B579D;
-    }
-.codepen__icon{
-    fill:var(--grey-bg);
-    background: black;
-    border-radius: 20%;
-}
-.codepen__icon:hover{
-    fill:white;
-}
-.github__icon:hover {
-    background: white;
-}
-.linkedin__icon:hover {
-    background:#007BB6;
-}
-
+/*** Contact CSS ****/
 
 .contact{
     height:600px;
@@ -204,19 +185,28 @@ li.active a{
     color:var(--dark-grey);
     padding:4rem;
 }
-.contact h3::after{
-        content:"";
-        display:block;
-        position: absolute;
-        width:100px;
-        height:2px;
-        background: var(--grey-bg);
-        left:0;
-        right:0;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:1rem;
+.social-items{
+    width:100%;
+    display:flex;
+    /* flex-wrap:wrap; */
+    justify-content: center;
+    align-items:center;
+    margin-bottom:2rem;
 }
+.social-items div{
+    width:40px;
+    margin:2rem 1rem 0 1rem;
+}
+.social-items i:hover{
+    /* transform:scale(1.1,1.1); */
+    color:lightcyan;
+}
+.social-items i{
+    color:var(--dark-grey);
+    transition: color .2s linear;
+}
+
+/**** Footer CSS ***/
 
 footer{
     height:70px;
@@ -228,36 +218,88 @@ footer{
     color: var(--grey-bg);
 }
 
+/*** Button CSS ***/
+.btn{
+    margin-top:3rem;
+    padding:1em;
+    display:inline-block;
+    text-decoration:none;
+    color:var(--azure-bg);
+    background:var(--dark-grey);
+}
+.btn:hover{
+    opacity:.9;
+}
 
 /**** Burger Menu CSS ****/
 
 .menu-toggle{
-    top:.5rem;
-    right:24px;
+    top:.4rem;
+    right:20px;
     cursor: pointer;
-    padding:5px 10px;
-    border:1px solid grey;
+    padding:12px 8px;
     display:none;
-    background:var(--grey-bg);
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    content:"";
+    display:block;
+    height:3px;
+    width:2rem;
+    background:var(--text-color);
+    border-radius:4px;
+    transition: all .4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    /* position: absolute; */
+}
+.hamburger::before{
+    position:relative;
+    bottom:8px;
+}
+.hamburger::after{
+    position: relative;
+    top:6px;
+}
+.close.hamburger::before{
+    opacity:0;
+}
+.close.hamburger{
+    transform:rotate(45deg);
+}
+.close.hamburger::after{
+    transform:translateY(-9px) rotate(-90deg);
 }
 
 
 /***** Scroll to Top Button CSS ***/
+
 .scroll-top{
-    opacity: 0;
+    display: none;
     position:fixed;
-    bottom:24px;
+    bottom:12px;
     right:24px;
     border-radius:50%; 
-    /* background:var(--grey-bg); */
-    color:#CACBCC;
+    border: 1px solid transparent;
+    background:var(--dark-grey);
+    width:48px;
+    height:48px;
+    display:none;
+    color:var(--text-color);
     cursor: pointer;
-    transition: opacity .3s linear;
+    /* transition: all .3s linear; */
 }
 .scroll-top:hover{
-    color:#5e6063;
+    color:#e3e7ed;
+    background:#91a1ba;
 }
 
+.scroll-top i{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    padding-bottom:4px;
+}
 
 /***** Form CSS ******/
 .form{
@@ -317,8 +359,17 @@ textarea{
 
 
 /***** MEDIA QUERIES ****/
-
-
+@media screen and (max-width:920px){
+    .project{
+        /* width:350px; */
+        cursor: pointer;
+        position: relative;
+        margin:1rem;
+        flex:1 100%;
+        min-width:250px;
+        max-width:600px;
+    }
+}
 @media screen and (max-width:800px){
     .form{
         width:80%;
@@ -339,7 +390,7 @@ textarea{
         /* display:block; */
         flex-direction: column; /* Flex items from top to bottom */
         text-align: left;
-        margin:2rem;
+        margin:2.5rem 2rem;
         border-top:1px solid white; 
         margin-bottom:10px;
     }
@@ -347,18 +398,16 @@ textarea{
         padding:.5rem;
     }
     .navbar{
-        max-height:0;
+        max-height:2.5rem; /* setting the height of navbar to be the same as it margin-top so it won't appear */
         overflow: hidden;
         transition:all .5s linear;
         padding:0;
     }
-    .show{
+    .navbar.show{
         max-height:100%;
-
     }
 
 }
-
 @media screen and (max-width:470px){
     h1,h2{
         font-size:3em;
@@ -366,10 +415,7 @@ textarea{
     .form{
         width:100%;
     }
+    .img-overlay a{
+        font-size:.8em;
+    }
 }
-
-
-
-/* BACK TO TOP ARROW FIXED KATW DE3IA
-NA SYNDESW TIN FORMA ME TO EMAIL MOU
-PAGE TITLE */

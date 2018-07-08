@@ -1,8 +1,15 @@
 $(document).ready(function(){
     var scrollLink = $('.scroll');
+
+    
     //navbad toggle for mobile
     $(".menu-toggle").click(function(){
         $('.navbar').toggleClass('show');
+    });
+
+    //hamburger menu animation
+    $(".menu-toggle").click(function(){
+        $(".hamburger").toggleClass('close');
     });
 
     //smooth scrolling
@@ -37,11 +44,11 @@ $(document).ready(function(){
     });
 
     //scroll to top button
-    $(window).scroll(function(){
-        if($(this).scrollTop()>=60){
-            $(".scroll-top").css("opacity","1");
-        }else{
-            $(".scroll-top").css("opacity","0");
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $(".scroll-top").fadeIn(200);
+        } else {
+            $(".scroll-top").fadeOut(200);
         }
     });
 
