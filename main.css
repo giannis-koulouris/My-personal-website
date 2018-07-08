@@ -406,7 +406,6 @@ textarea{
     .navbar.show{
         max-height:100%;
     }
-
 }
 @media screen and (max-width:470px){
     h1,h2{
@@ -418,4 +417,9 @@ textarea{
     .img-overlay a{
         font-size:.8em;
     }
+    footer{
+        justify-content: flex-start;
+        padding-left:2rem;
+    }
+
 }
