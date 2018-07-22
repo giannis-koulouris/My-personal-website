@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <div class="container">
@@ -47,20 +48,20 @@
         <div class="portfolio" id="portfolio">
             <h3>Portfolio</h3>
             <div class="projects-wrapper">
-                <div class="project smart-seo">
+                <div data-aos="slide-right" data-aos-once="true" class="project indigo-template">
                     <div class="img-overlay">
-                        <a href="#">See More</a>
+                        <a target="_blank" rel="noopener" href="https://indigo-template.netlify.com/" title="Indigo - Template" >See More</a>
                     </div>
-                    <img src="images/smart-seo.png" alt="">
+                    <img src="images/indigo-template.png" alt="">
                     
                 </div>
-                <div class="project digital-elite">
+                <div data-aos="slide-up" data-aos-once="true" class="project digital-elite">
                     <img src="images/digital-elite.png" alt="">
                     <div class="img-overlay">
                             <a href="#">See More</a>
                     </div>
                 </div>
-                <div class="project smart-seo">
+                <div data-aos="slide-left" data-aos-once="true" class="project aaaaa">
                     
                     <div class="img-overlay">
                             <a href="#">See More</a>
@@ -103,5 +104,9 @@
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

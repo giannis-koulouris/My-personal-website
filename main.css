@@ -289,8 +289,7 @@ footer{
     /* transition: all .3s linear; */
 }
 .scroll-top:hover{
-    color:#e3e7ed;
-    background:#91a1ba;
+    background: #586170;
 }
 
 .scroll-top i{
@@ -335,6 +334,7 @@ input[type=email]{
     grid-area:email;
 }
 textarea{
+    resize:none; /* Disable risizing from the bottom right corner */
     grid-area:textarea;
     box-sizing:border-box;
     padding: 6px 12px;
@@ -354,7 +354,6 @@ textarea{
     cursor: pointer;
     margin:0;
  }
-
 
 
 
@@ -423,3 +422,17 @@ textarea{
     }
 
 }
+
+/**  NA VALW NA EMFANIZETAI MESW ANIMATION OI TEXNOLOGIES POU XRISIM. STO KATHE PROJECT
+PX. HTML CSS JS
+kanw ta portfolio items na emfanizontai me animation sto prwto scroll??
+xrisimopoiw to animate.css
+Na alla3w to domain se .gr kai na kanw ena neo repository sto github 
+***** portfolio flex css 
+flex-grow: 1;       it can grow 
+flex-shrink: 1;   it can shrink 
+flex-basis: 225px;  arbitrary depending on design
+min-width: 225px;  equal to flex-basis 
+max-width: 350px;  
+
+**/
