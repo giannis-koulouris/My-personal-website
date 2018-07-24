@@ -123,6 +123,7 @@ li.active a{
     color:var(--azure-bg);
     padding:4rem;
     height:auto;
+    overflow: hidden;
 }
 
 /**** Projects CSS *****/
@@ -425,8 +426,10 @@ textarea{
 
 /**  NA VALW NA EMFANIZETAI MESW ANIMATION OI TEXNOLOGIES POU XRISIM. STO KATHE PROJECT
 PX. HTML CSS JS
-kanw ta portfolio items na emfanizontai me animation sto prwto scroll??
-xrisimopoiw to animate.css
+
+- NA KANW TIS EIKONES JPEG GIA NA MEIWTHEI POLY TO MEGETHOS
+
+- NA VELTIWSW TO MOBILE NAVBAR KAI NA KANW LIGO PIO MEGALO KAI LIGO PIO KATW TO HAMBURGER MENU
 Na alla3w to domain se .gr kai na kanw ena neo repository sto github 
 ***** portfolio flex css 
 flex-grow: 1;       it can grow 
